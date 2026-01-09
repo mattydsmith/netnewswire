@@ -64,6 +64,47 @@ NetNewsWire is a multi-platform RSS reader with separate targets for macOS and i
 - Code signing configured through SharedXcodeSettings for development
 - Documentation and technical notes are located in the `Technotes/` folder
 
+### Enabling CloudKit/iCloud in Development Builds
+
+CloudKit syncing is disabled in development builds but can be enabled with proper Apple Developer account setup. Unlike Feedly/Inoreader which require third-party API keys, CloudKit only needs entitlements and Apple Developer Portal configuration.
+
+**TODO: Steps to enable CloudKit in development builds**
+
+- [ ] **Configure Apple Developer Portal**
+  - Go to [developer.apple.com](https://developer.apple.com) → Certificates, Identifiers & Profiles
+  - Select your App ID (or create one)
+  - Enable CloudKit capability
+  - Create/select CloudKit container: `iCloud.YOUR-ORG-ID.NetNewsWire-Dev`
+  - Note: Can use different container ID than production to avoid conflicts
+
+- [ ] **Update Development Entitlements**
+  - Edit `iOS/Resources/NetNewsWire-dev.entitlements`
+  - Add CloudKit entitlements (see `NetNewsWire.entitlements` for reference):
+    - `com.apple.developer.icloud-container-environment` = `Development`
+    - `com.apple.developer.icloud-container-identifiers` = `iCloud.YOUR-ORG-ID.NetNewsWire-Dev`
+    - `com.apple.developer.icloud-services` = `CloudKit`
+    - `aps-environment` = `development`
+
+- [ ] **Remove UI Blocking Code**
+  - `iOS/Settings/AddAccountViewController.swift:133` - Remove or modify `isDeveloperBuild` check for CloudKit
+  - `Mac/Preferences/Accounts/AddAccountsView.swift:92` - Remove or modify `isDeveloperBuild` check for iCloud section
+
+- [ ] **Update DeveloperSettings.xcconfig**
+  - Ensure `DEVELOPMENT_TEAM` is set to your Apple Team ID
+  - Verify `ORGANIZATION_IDENTIFIER` matches your CloudKit container prefix
+  - CloudKit requires valid provisioning profile with iCloud capability
+
+- [ ] **Test CloudKit Functionality**
+  - Build and run with development entitlements
+  - Add iCloud account in Settings/Preferences
+  - Verify feed sync works across devices
+  - Check CloudKit Dashboard for data (developer.apple.com → CloudKit Console)
+
+**Key Differences:**
+- **Feedly/Inoreader**: Require OAuth secrets in `SecretKey.swift.gyb` (environment variables)
+- **CloudKit**: Only requires entitlements configuration and Apple Developer account
+- **Reader View**: Requires Mercury API keys in `SecretKey.swift.gyb`
+
 ## visionOS Support
 
 ### Configuration
