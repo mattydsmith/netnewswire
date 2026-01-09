@@ -2,3 +2,5 @@
 CODE_SIGN_ENTITLEMENTS = iOS/ShareExtension/NetNewsWire_iOS_ShareExtension.entitlements
 INFOPLIST_FILE = iOS/ShareExtension/Info.plist
 PRODUCT_BUNDLE_IDENTIFIER = $(ORGANIZATION_IDENTIFIER).NetNewsWire.iOS$(BUNDLE_ID_SUFFIX).Share-Extension
+SUPPORTED_PLATFORMS = iphoneos iphonesimulator xros xrsimulator
+SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES
