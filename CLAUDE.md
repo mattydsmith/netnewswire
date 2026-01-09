@@ -17,8 +17,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Individual test runs follow same xcodebuild pattern with `test` action instead of `build`
 
 ### Setup
-- First-time setup: Run `./setup.sh` to configure development environment and code signing
-- Manual setup: Create `SharedXcodeSettings/DeveloperSettings.xcconfig` in parent directory
+
+**IMPORTANT: You must run setup before building for the first time!**
+
+- **First-time setup**: Run `./setup.sh` to configure development environment and code signing
+  - You'll need your Apple Developer Team ID (found in Xcode → Settings → Accounts, or via `security find-identity -v -p codesigning`)
+  - Enter an organization identifier in reverse-domain format (e.g., `com.yourname`)
+  - For Personal Team (free Apple ID), any identifier works for simulator builds
+- **Manual setup**: Create `SharedXcodeSettings/DeveloperSettings.xcconfig` in parent directory
 
 ## Project Architecture
 
@@ -105,35 +111,57 @@ CloudKit syncing is disabled in development builds but can be enabled with prope
 - **CloudKit**: Only requires entitlements configuration and Apple Developer account
 - **Reader View**: Requires Mercury API keys in `SecretKey.swift.gyb`
 
+## Troubleshooting
+
+### "Multiple commands produce" Build Errors
+
+If you encounter errors like:
+```
+Multiple commands produce '/path/to/NetNewsWire.app/Info.plist'
+Multiple commands produce '/path/to/NetNewsWire.app/stylesheet.css'
+Multiple commands produce '/path/to/NetNewsWire.app/template.html'
+```
+
+**Solution:**
+1. In Xcode, select the **NetNewsWire-iOS** target
+2. Go to **Build Phases** tab
+3. Expand **"Copy Bundle Resources"** section
+4. Remove these files if present: `Info.plist`, `stylesheet.css`, `template.html`
+5. Clean Build Folder (Cmd+Shift+K) and rebuild
+
+**Why this happens:** These files are already handled by:
+- `Info.plist` → Managed by the `INFOPLIST_FILE` build setting
+- `stylesheet.css` and `template.html` → Auto-included by File System Synchronized Groups
+
+### Code Signing Warnings on Personal Team
+
+Provisioning profile warnings are normal when using a free Apple Developer account (Personal Team) for simulator builds. These warnings don't prevent simulator builds from succeeding - the app will run fine on simulators despite the warnings.
+
+### First Build After Clone
+
+1. **Run setup script first:** `./setup.sh` (required!)
+2. **Clean derived data:** Delete `~/Library/Developer/Xcode/DerivedData/*` if you encounter persistent build issues
+3. **Restart Xcode** after running setup to ensure configuration is loaded
+
 ## visionOS Support
 
-### Configuration
-visionOS support is enabled in `xcconfig/NetNewsWire_iOSapp_target.xcconfig`:
-- `SUPPORTED_PLATFORMS` includes `xros xrsimulator`
-- `SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES`
+### Current Status
+visionOS support via compatibility mode has been explored but encounters build system conflicts with File System Synchronized Groups when adding `xros xrsimulator` to `SUPPORTED_PLATFORMS` in xcconfig files.
 
-This allows the iOS target (NetNewsWire-iOS) to run on Apple Vision Pro in compatibility mode.
+### Alternative Approaches
+To run NetNewsWire on Vision Pro simulator:
+1. **Add platforms via Xcode GUI** instead of xcconfig files:
+   - Select NetNewsWire-iOS target → Build Settings
+   - Search for "Supported Platforms"
+   - Manually add `xros` and `xrsimulator`
+   - Set "Supports XR Designed for iPhone iPad" to YES
+2. This may avoid conflicts with File System Synchronized Groups
 
-### Architecture Notes
-- Uses the existing iOS codebase with UIKit (no separate visionOS target)
-- Runs as "Designed for iPad" app in visionOS compatibility mode
-- The three-pane split view interface (sidebar, timeline, detail) translates well to visionOS
-- UIDevice.current.userInterfaceIdiom returns `.pad` on visionOS
-- All major frameworks used (UIKit, WebKit, BackgroundTasks, etc.) are visionOS-compatible
-
-### Testing Considerations
-When testing on visionOS, pay attention to:
-- UISplitViewController behavior and window management
-- Gesture interactions (swipe actions, drag-and-drop)
-- WKWebView article rendering and tap zones
-- Background task scheduling
-- Navigation bar and toolbar appearance
-- Share extension functionality
-
-### Known Limitations
-- Currently uses compatibility mode rather than native visionOS SDK
-- No visionOS-specific optimizations (ornaments, spatial features, etc.)
-- Extensions (share extension, widgets) may need separate visionOS configuration
+### Architecture Notes (if visionOS is enabled)
+- Would use existing iOS codebase with UIKit (no separate visionOS target)
+- Would run as "Designed for iPad" app in visionOS compatibility mode
+- The three-pane split view interface translates well to spatial computing
+- All major frameworks (UIKit, WebKit, BackgroundTasks) are visionOS-compatible
 
 ## Code Formatting
 
