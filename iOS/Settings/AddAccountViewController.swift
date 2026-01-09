@@ -130,7 +130,8 @@ final class AddAccountViewController: UITableViewController, AddAccountDismissDe
 		case AddAccountSections.icloud.rawValue:
 			cell.comboNameLabel?.text = AddAccountSections.icloud.sectionContent[indexPath.row].localizedAccountName()
 			cell.comboImage?.image = Assets.accountImage(AddAccountSections.icloud.sectionContent[indexPath.row])
-			if AppDefaults.shared.isDeveloperBuild || AccountManager.shared.accounts.contains(where: { $0.type == .cloudKit }) {
+			// Only disable if already have a CloudKit account (can't have multiple)
+			if AccountManager.shared.accounts.contains(where: { $0.type == .cloudKit }) {
 				cell.isUserInteractionEnabled = false
 				cell.comboNameLabel?.isEnabled = false
 			}
