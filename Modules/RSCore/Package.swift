@@ -28,8 +28,8 @@ let package = Package(
 		.target(
 			name: "RSCoreResources",
 			resources: [
-				.process("Resources/WebViewWindow.xib"),
-				.process("Resources/IndeterminateProgressWindow.xib")
+				.copy("Resources/WebViewWindow.xib"),
+				.copy("Resources/IndeterminateProgressWindow.xib")
 			],
 			swiftSettings: [
 				.enableUpcomingFeature("NonisolatedNonsendingByDefault"),

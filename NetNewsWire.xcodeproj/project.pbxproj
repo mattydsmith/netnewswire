@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17192ADA2567B3D500AAEACA /* RSSparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 17192AD92567B3D500AAEACA /* RSSparkle */; };
 		176814002564BB2D00D98635 /* NetNewsWire iOS Widget Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 176813F32564BB2C00D98635 /* NetNewsWire iOS Widget Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		179C39EA26F76B0500D4E741 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 179C39E926F76B0500D4E741 /* Zip */; };
 		179D280B26F6F93D003B2E0A /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 179D280A26F6F93D003B2E0A /* Zip */; };
@@ -345,13 +344,6 @@
 			);
 			target = 849C64701ED37A5D003D8FC0 /* NetNewsWireTests */;
 		};
-		84719F392DB9C60500EEF332 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				NetNewsWire_iOSwidgetextension_target.xcconfig,
-			);
-			target = 840D617B2029031C009BC708 /* NetNewsWire-iOS */;
-		};
 		84A6D03F2D1B4EC500F23315 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -498,7 +490,7 @@
 		842E249F2DB9F9B800FF7DD8 /* Mac */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (842E25332DB9F9B800FF7DD8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 842E25342DB9F9B800FF7DD8 /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */, 842E25352DB9F9B800FF7DD8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 842E25362DB9F9B800FF7DD8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Mac; sourceTree = "<group>"; };
 		8448F1F62D1E36BF0048BA50 /* Widget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (8448F2052D1E36BF0048BA50 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Widget; sourceTree = "<group>"; };
 		84719F0E2DB9C52B00EEF332 /* Tests */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (84719F272DB9C52B00EEF332 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Tests; sourceTree = "<group>"; };
-		84719F372DB9C60400EEF332 /* xcconfig */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (84719F392DB9C60500EEF332 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (common, ); path = xcconfig; sourceTree = "<group>"; };
+		84719F372DB9C60400EEF332 /* xcconfig */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (common, ); path = xcconfig; sourceTree = "<group>"; };
 		84A6CFB52D1B4EC500F23315 /* iOS */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (84A6D03F2D1B4EC500F23315 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 84A6D0402D1B4EC500F23315 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 84A6D0412D1B4EC500F23315 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = iOS; sourceTree = "<group>"; };
 		84CB35042DB9B5E2002AC251 /* Modules */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Modules; sourceTree = "<group>"; };
 		84D35D422DB9F32D004AA60E /* Shared */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (84D35E0A2DB9F32D004AA60E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 84D35E0B2DB9F32D004AA60E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 84D35E0C2DB9F32D004AA60E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 84D35E0D2DB9F32D004AA60E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 84D35E0E2DB9F32D004AA60E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 84D35E0F2DB9F32D004AA60E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Shared; sourceTree = "<group>"; };
@@ -581,7 +573,6 @@
 				8424B3182DB73D4C0053AA11 /* RSParser in Frameworks */,
 				848E84D02DB749440023F3BA /* RSCoreResources in Frameworks */,
 				513277642590FC640064F1E7 /* SyncDatabase in Frameworks */,
-				17192ADA2567B3D500AAEACA /* RSSparkle in Frameworks */,
 				5132775E2590FC640064F1E7 /* Articles in Frameworks */,
 				84EE43482DB8A441009D3A8D /* RSDatabase in Frameworks */,
 				84EE3F122DB8A088009D3A8D /* RSTree in Frameworks */,
@@ -857,7 +848,6 @@
 			packageProductDependencies = (
 				514C16CD24D2E63F009A3AFA /* Account */,
 				51C4CFF524D37DD500AF9874 /* Secrets */,
-				17192AD92567B3D500AAEACA /* RSSparkle */,
 				519CA8E425841DB700EB079A /* CrashReporter */,
 				5132775D2590FC640064F1E7 /* Articles */,
 				513277602590FC640064F1E7 /* ArticlesDatabase */,
@@ -907,8 +897,9 @@
 		849C64581ED37A5D003D8FC0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 2620;
+				LastUpgradeCheck = 2630;
 				ORGANIZATIONNAME = "Ranchero Software";
 				TargetAttributes = {
 					176813F22564BB2C00D98635 = {
@@ -977,7 +968,6 @@
 			);
 			mainGroup = 849C64571ED37A5D003D8FC0;
 			packageReferences = (
-				17192AD82567B3D500AAEACA /* XCRemoteSwiftPackageReference "Sparkle-Binary" */,
 				519CA8E325841DB700EB079A /* XCRemoteSwiftPackageReference "plcrashreporter" */,
 				179D280926F6F93D003B2E0A /* XCRemoteSwiftPackageReference "Zip" */,
 			);
@@ -1340,6 +1330,8 @@
 			baseConfigurationReferenceAnchor = 84719F372DB9C60400EEF332 /* xcconfig */;
 			baseConfigurationReferenceRelativePath = NetNewsWire_iOSwidgetextension_target.xcconfig;
 			buildSettings = {
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 			};
 			name = Debug;
 		};
@@ -1348,6 +1340,8 @@
 			baseConfigurationReferenceAnchor = 84719F372DB9C60400EEF332 /* xcconfig */;
 			baseConfigurationReferenceRelativePath = NetNewsWire_iOSwidgetextension_target.xcconfig;
 			buildSettings = {
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 			};
 			name = Release;
 		};
@@ -1356,6 +1350,10 @@
 			baseConfigurationReferenceAnchor = 84719F372DB9C60400EEF332 /* xcconfig */;
 			baseConfigurationReferenceRelativePath = NetNewsWire_shareextension_target.xcconfig;
 			buildSettings = {
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				REGISTER_APP_GROUPS = YES;
 			};
 			name = Debug;
 		};
@@ -1364,6 +1362,10 @@
 			baseConfigurationReferenceAnchor = 84719F372DB9C60400EEF332 /* xcconfig */;
 			baseConfigurationReferenceRelativePath = NetNewsWire_shareextension_target.xcconfig;
 			buildSettings = {
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				REGISTER_APP_GROUPS = YES;
 			};
 			name = Release;
 		};
@@ -1372,6 +1374,8 @@
 			baseConfigurationReferenceAnchor = 84719F372DB9C60400EEF332 /* xcconfig */;
 			baseConfigurationReferenceRelativePath = NetNewsWire_iOSintentextension_target.xcconfig;
 			buildSettings = {
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 			};
 			name = Debug;
 		};
@@ -1380,6 +1384,8 @@
 			baseConfigurationReferenceAnchor = 84719F372DB9C60400EEF332 /* xcconfig */;
 			baseConfigurationReferenceRelativePath = NetNewsWire_iOSintentextension_target.xcconfig;
 			buildSettings = {
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 			};
 			name = Release;
 		};
@@ -1388,6 +1394,8 @@
 			baseConfigurationReferenceAnchor = 84719F372DB9C60400EEF332 /* xcconfig */;
 			baseConfigurationReferenceRelativePath = NetNewsWire_iOSshareextension_target.xcconfig;
 			buildSettings = {
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 			};
 			name = Debug;
 		};
@@ -1396,6 +1404,8 @@
 			baseConfigurationReferenceAnchor = 84719F372DB9C60400EEF332 /* xcconfig */;
 			baseConfigurationReferenceRelativePath = NetNewsWire_iOSshareextension_target.xcconfig;
 			buildSettings = {
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 			};
 			name = Release;
 		};
@@ -1404,6 +1414,7 @@
 			baseConfigurationReferenceAnchor = 84719F372DB9C60400EEF332 /* xcconfig */;
 			baseConfigurationReferenceRelativePath = NetNewsWire_iOSTests_target.xcconfig;
 			buildSettings = {
+				DEAD_CODE_STRIPPING = YES;
 			};
 			name = Debug;
 		};
@@ -1412,6 +1423,7 @@
 			baseConfigurationReferenceAnchor = 84719F372DB9C60400EEF332 /* xcconfig */;
 			baseConfigurationReferenceRelativePath = NetNewsWire_iOSTests_target.xcconfig;
 			buildSettings = {
+				DEAD_CODE_STRIPPING = YES;
 			};
 			name = Release;
 		};
@@ -1420,6 +1432,8 @@
 			baseConfigurationReferenceAnchor = 84719F372DB9C60400EEF332 /* xcconfig */;
 			baseConfigurationReferenceRelativePath = NetNewsWire_safariextension_target.xcconfig;
 			buildSettings = {
+				DEAD_CODE_STRIPPING = YES;
+				REGISTER_APP_GROUPS = YES;
 			};
 			name = Debug;
 		};
@@ -1428,6 +1442,8 @@
 			baseConfigurationReferenceAnchor = 84719F372DB9C60400EEF332 /* xcconfig */;
 			baseConfigurationReferenceRelativePath = NetNewsWire_safariextension_target.xcconfig;
 			buildSettings = {
+				DEAD_CODE_STRIPPING = YES;
+				REGISTER_APP_GROUPS = YES;
 			};
 			name = Release;
 		};
@@ -1436,6 +1452,8 @@
 			baseConfigurationReferenceAnchor = 84719F372DB9C60400EEF332 /* xcconfig */;
 			baseConfigurationReferenceRelativePath = NetNewsWire_iOSapp_target.xcconfig;
 			buildSettings = {
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 			};
 			name = Debug;
 		};
@@ -1444,6 +1462,8 @@
 			baseConfigurationReferenceAnchor = 84719F372DB9C60400EEF332 /* xcconfig */;
 			baseConfigurationReferenceRelativePath = NetNewsWire_iOSapp_target.xcconfig;
 			buildSettings = {
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 			};
 			name = Release;
 		};
@@ -1452,6 +1472,11 @@
 			baseConfigurationReferenceAnchor = 84719F372DB9C60400EEF332 /* xcconfig */;
 			baseConfigurationReferenceRelativePath = NetNewsWire_project_debug.xcconfig;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTS_MACCATALYST = YES;
 			};
 			name = Debug;
 		};
@@ -1460,6 +1485,12 @@
 			baseConfigurationReferenceAnchor = 84719F372DB9C60400EEF332 /* xcconfig */;
 			baseConfigurationReferenceRelativePath = NetNewsWire_project_release.xcconfig;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
 		};
@@ -1468,6 +1499,15 @@
 			baseConfigurationReferenceAnchor = 84719F372DB9C60400EEF332 /* xcconfig */;
 			baseConfigurationReferenceRelativePath = NetNewsWire_macapp_target.xcconfig;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				AUTOMATION_APPLE_EVENTS = YES;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readwrite;
+				REGISTER_APP_GROUPS = YES;
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = YES;
 			};
 			name = Debug;
 		};
@@ -1476,6 +1516,15 @@
 			baseConfigurationReferenceAnchor = 84719F372DB9C60400EEF332 /* xcconfig */;
 			baseConfigurationReferenceRelativePath = NetNewsWire_macapp_target.xcconfig;
 			buildSettings = {
+				ALLOW_TARGET_PLATFORM_SPECIALIZATION = YES;
+				AUTOMATION_APPLE_EVENTS = YES;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readwrite;
+				REGISTER_APP_GROUPS = YES;
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = YES;
 			};
 			name = Release;
 		};
@@ -1484,6 +1533,7 @@
 			baseConfigurationReferenceAnchor = 84719F372DB9C60400EEF332 /* xcconfig */;
 			baseConfigurationReferenceRelativePath = NetNewsWireTests_target.xcconfig;
 			buildSettings = {
+				DEAD_CODE_STRIPPING = YES;
 			};
 			name = Debug;
 		};
@@ -1492,6 +1542,7 @@
 			baseConfigurationReferenceAnchor = 84719F372DB9C60400EEF332 /* xcconfig */;
 			baseConfigurationReferenceRelativePath = NetNewsWireTests_target.xcconfig;
 			buildSettings = {
+				DEAD_CODE_STRIPPING = YES;
 			};
 			name = Release;
 		};
@@ -1591,14 +1642,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		17192AD82567B3D500AAEACA /* XCRemoteSwiftPackageReference "Sparkle-Binary" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Ranchero-Software/Sparkle-Binary.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
 		179D280926F6F93D003B2E0A /* XCRemoteSwiftPackageReference "Zip" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/marmelroy/Zip.git";
@@ -1618,11 +1661,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		17192AD92567B3D500AAEACA /* RSSparkle */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 17192AD82567B3D500AAEACA /* XCRemoteSwiftPackageReference "Sparkle-Binary" */;
-			productName = RSSparkle;
-		};
 		179C39E926F76B0500D4E741 /* Zip */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 179D280926F6F93D003B2E0A /* XCRemoteSwiftPackageReference "Zip" */;
